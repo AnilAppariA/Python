@@ -1,0 +1,12 @@
+######################## tuple Demo
+
+alist=[10,20,30,40]
+alist[0]=100
+print("after replacement:",alist)
+
+alist=(10,20,30,40)
+#alist[0]=100 tuple
+alistD=list(alist)
+alistD.append(100)
+attup=tuple(alistD)
+print("after replacement:",attup)

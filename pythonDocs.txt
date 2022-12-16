@@ -1,0 +1,1289 @@
+https://online.vinsys.com
+
+
+
+https://repo.anaconda.com/archive/Anaconda3-2021.05-Windows-x86_64.exe
+
+
+-----------------------
+username  password
+-----------------------
+python002	python4u#002    Jaffar
+python003	python4u#003    Abhinav
+python004	python4u#004    Aswitha
+python005	python4u#005    Anil
+python006	python4u#006    Deepak
+python007	python4u#007    Vaibhav
+python008	python4u#008    Vipul
+python009	python4u#009     Suma
+python010	python4u#010     Uma
+python011	python4u#011     sravani
+python012	python4u#012     Ravi
+python013	python4u#013     Abdul
+python014	python4u#014    Nikitha
+python015	python4u#015    Adityan
+python016	python4u#016    Mokshitha
+python017	python4u#017        
+python018	python4u#018
+python019	python4u#019
+python020	python4u#020
+python021	python4u#021
+python022	python4u#022
+python023	python4u#023
+python024	python4u#024
+python025	python4u#025
+python026	python4u#026
+
+
+
+
+
+#############################################################
+
+
+colors = [
+   {
+     "colors": "red",
+     "values": "#f00"
+   },
+   {
+     "colors": "green",
+     "values": "#0f0"
+   },
+   {
+     "colors": "blue",
+     "values": "#00f"
+   },
+   {
+     "colors": "cyan",
+     "values": "#0ff"
+   },
+   {
+     "colors": "magenta",
+     "values": "#f0f"
+   },
+   {
+     "colors": "yellow",l
+     "values": "#ff0"
+   },
+   {
+     "colors": "black",
+     "values": "#000"
+     }
+  ]
+
+Write a Python program to display all the colors and its values.
+
+
+red(#f00)
+green(#0f0)
+blue(#00f)
+cyan(#0ff)
+magenta(#f0f)
+yellow(#ff0)
+black(#000)
+
+
+
+for item in colors:
+    print(item['colors'] + "(" + item['values'] + ")")
+    
+
+########################################################################
+
+data = {
+"id": "0001",
+"type": "donut",
+"name": "Cake",
+"image": {
+"url": "images/0001.jpg",
+"width": 200,
+"height": 200
+},
+"thumbnail": {
+"url": "images/thumbnails/0001.jpg",
+"width": 32,
+"height": 32
+}
+}
+
+
+
+Write a Python program to display the below output
+
+id               : 0001
+type             : donut
+name             : Cake
+image.width      : 200
+image.height     : 200
+image.url        : images/0001.jpg
+thumbnail.width  : 32
+thumbnail.height : 32
+thumbnail.url    : images/thumbnails/0001.jpg
+
+
+
+
+for key,value in data.items():
+    if isinstance(value,str):
+        print(key.ljust(20),":",value)
+    elif isinstance(value,dict):
+        for skey,svalue in value.items():
+            finalkey = key + "." + skey
+            print(finalkey.ljust(20),":",svalue)
+            
+
+########################################################################
+
+
+
+
+write a program to display the below output
+
+info = [
+  {
+    "name": "Meowsy",
+    "species" : "cat",
+    "foods": {
+      "likes": ["tuna", "catnip"],
+      "dislikes": ["ham", "zucchini"]
+    }
+  },
+  {
+    "name": "Barky",
+    "species" : "dog",
+    "foods": {
+      "likes": ["bones", "carrots"],
+      "dislikes": ["tuna"]
+    }
+  },
+  {
+    "name": "Purrpaws",
+    "species" : "cat",
+    "foods": {
+      "likes": ["mice"],
+      "dislikes": ["cookies"]
+    }
+  }
+]
+
+
+output:
+-----------
+Meowsy,cat,tuna,catnip,ham,zucchini
+Barky,dog,bones,carrots,tuna
+..
+..
+
+
+#####
+#code
+######
+for item in info:
+    data = list(item.values())
+    #print(data)
+    if isinstance(data[2],dict):
+        subinfo = data[2].values()
+        line = [  ",".join(item)  for item in subinfo]
+        line  = ",".join(line)      
+        finalstring = ",".join([data[0],data[1],line])
+        print(finalstring)
+
+###################################################################
+
+write a  program to display the below output:
+
+{
+  "pets": [
+    {
+      "name" : "Purrsloud",
+      "species" : "Cat",
+      "favFoods" : ["wet food", "dry food", "<strong>any</strong> food"],
+      "birthYear" : 2016,
+      "photo" : "https://learnwebcode.github.io/json-example/images/cat-2.jpg"
+    },
+    {
+      "name" : "Barksalot",
+      "species" : "Dog",
+      "birthYear" : 2008,
+      "photo" : "https://learnwebcode.github.io/json-example/images/dog-1.jpg"
+    },
+    {
+      "name" : "Meowsalot",
+      "species" : "Cat",
+      "favFoods" : ["tuna", "catnip", "celery"],
+      "birthYear" : 2012,
+      "photo" : "https://learnwebcode.github.io/json-example/images/cat-1.jpg"
+    }
+  ]
+}
+
+
+output:
+------------
+cat-2.jpg
+dog-1.jpg
+cat-1.jpg
+
+
+
+for value in data.values():
+    for item in value:
+        print(item['photo'].split("/")[5])
+
+###############################################################
+
+write a program to display the below output
+
+info = { 
+    "coffee": {
+        "region": [
+            {"id":1,"name":"John Doe"},
+            {"id":2,"name":"Don Joeh"}
+        ],
+        "country": {"id":2,"company":"ACME"}
+    }, 
+    "brewing": {
+        "region": [
+            {"id":1,"name":"Rita"},
+            {"id":2,"name":"Preeti"}
+        ],
+        "country": {"id":2,"company":"ACME"}
+    }
+}
+
+
+sample output:
+--------------------
+
+JOhn Doe
+Don Joeh
+Rita
+Preeti
+
+
+
+
+for key,value in info.items():
+    for item in info[key]:
+        for data in info[key][item]:
+            if 'name' in data:
+                print(data['name']
+                
+    
+    
+    
+#######################################################################
+# link to download : 
+https://www.techworldguru.com/wp-content/uploads/2020/03/realestate.csv
+#######################################################################
+
+write a program to read the realestate.csv and display all the lines from the file
+
+####################################################################################################
+
+Write a Python program to read realestate.csv and display ONLY street and city columns.
+
+####################################################################################################
+
+Write a Python program to read realestate.csv and display all the UNIQUE cities and the count of unique cities.
+
+sample output:
+SACRAMENTO
+RANCHO CORDOVA
+RIO LINDA
+..
+..
+..
+Total no. of cities : xxx
+
+
+#Write a Python program to read realestate.csv and display all the UNIQUE cities and the count of unique cities.
+import csv
+citydict = dict()
+with open('realestate.csv') as fobj:
+    reader = csv.reader(fobj)
+    for line in reader:
+        city= line[1]
+        citydict[city] = 1
+    for city in citydict.keys():
+        print(city)
+    print("Total no. of cities :",len(citydict))
+        
+import csv
+cityset = set()
+with open('realestate.csv') as fobj:
+    reader = csv.reader(fobj)
+    for line in reader:
+        city= line[1]
+        cityset.add(city)
+    for city in cityset:
+        print(city)
+        
+c
+
+####################################################################################################
+ Write a Python program to read realestate.csv and display the 
+ count of an individual city with proper formtting
+
+sample output:
+SACRAMENTO       : 345 times
+RANCHO CORDOVA   : 34 times
+RIO LINDA        : 2 times
+..
+..
+..
+
+
+import csv
+citylist = list()
+with open('realestate.csv') as fobj:
+    reader = csv.reader(fobj)
+    for line in reader:
+        city = line[1]
+        citylist.append(city)
+    for city in set(citylist):
+        print(city.ljust(15),citylist.count(city),"times")
+        
+        
+####################################################################################################
+
+Write a Python program to read realestate.csv and replace all the lines containing SACRAMENTO with BANGALORE
+and display to the screen
+
+
+with open('realestate.csv') as fobj:
+    for line in fobj:
+        line = line.strip()
+        line = line.replace('SACRAMENTO','BANGALORE')
+        print(line)
+        
+        
+####################################################################################################
+Write a Python program to read realestate.csv and replace all the lines containing SACRAMENTO with BANGALORE
+and output to output to  13122022.csv
+
+
+with open('realestate.csv') as fobj, open('13122022.csv',"w") as fw:
+    for line in fobj:
+        line = line.strip()
+        line = line.replace('SACRAMENTO','BANGALORE')
+        fw.write(line + "\n")
+
+
+####################################################################################################
+
+Write a Python program to read realestate.csv and display all the lines satisfying the below
+
+– type should be residential
+– price shouldbe greater than 100000
+– city should be either SACRAMENTO or RIO LINDA
+####################################################################################################
+
+
+
+####################################################################################################
+https://github.com/giridhar276/optum/raw/main/jsonfiles%20(3).zip
+####################################################################################################
+    
+
+
+write a program to read 500.json file and display the below output
+
+sample output:
+----------------
+id,userid,name,profilePicture
+2140,4051,manoj,Images/9b.png
+2131,3031
+
+
+
+
+##########
+https://github.com/giridhar276/optum/raw/main/pandas_assignments.zip
+##########
+
+
+
+#################################################################################################
+
+
+
+1. Write a Python program to display all the files and directories from the current directory.
+
+2. Write a Python program to display all the files and directories from the C:\ or \usr\bin (if using Linux).
+
+3. Write a Python program to display ONLY .py that are existing in the current directory.
+
+4. Write a Python program to display ONLY .py files and its size as below from the current directory with proper formatting.
+
+Sample output:
+update_customer.py   108 bytes
+customer_info.py      45 bytes
+remote_server.py      49 bytes
+
+5. Write a Python program to display ONLY .py files and its size as below from the current directory with proper formatting.
+
+
+6. Write a Python program to display all the files other than .py files from the current directory.
+
+7. Write a Python program to display all the files and folders separately and its count also.
+
+files
+------
+file1
+file2
+file3
+
+Total no. of files : 504
+
+directories
+------------
+dir1
+dir2
+dir3
+
+Total no. of direcotires : 453
+
+###############################################################################
+
+9. Write a Python program to display the below information.
+
+display the current user name
+display current working directory
+display Operating system name
+display process id of your running program
+display the current timestamp
+display yesterday’s date
+display tomorrow’s date
+display all the environment variables that are existing
+display the python executable path ( just like ‘which python3’ in Linux )
+10. Write a Python program to display the below information.
+– disk utilization of C:\ ( total , used and free space)
+– disk utilization of \tmp ( if using linux)
+– display CPU utilization
+– display Memory utailization
+
+11. Write a Python program to create 10 directories in the current directory as below
+
+dir1
+dir2
+..
+..
+dir100
+
+
+---------------------------------------------------------
+create 2 directories as below
+
+source     :  ( copy few files to the source directory)
+destination:  empty
+
+write a program to copy all the files from source to destination
+
+---------------------------------------------------------
+
+Write a Python program to create a empty file with today’s timestamp.
+
+14_Dec_2022.csv
+
+-----------------------------------------------------------
+
+Write a Python program to display all the files from the current directory and its accessed time, modified time, change time, and size in bytes with proper formatted output.
+-----------------------------------------------------------
+
+Write a Python program to delete all the files from the current directory that are older than 10 days.
+-----------------------------------------------------------
+
+
+
+solutions : 
+####################################################
+https://techworldguru.com/assignment3_solutions.txt
+####################################################
+
+
+https://github.com/giridhar276/optum/raw/main/mysqlsetup.docx
+
+
+
+
+
+write a program to read realestate.csv and insert street and city columns data to the database with
+
+-proper exception handling
+- validations like  file exists or not...    file size if greater than zero or not.
+
+
+
+
+
+######################
+# re = regular expressions
+######################
+
+
+
+# re in python  = grep + sed + awk  in linux
+import re
+#    ^ will display all the lines starting with pytthon
+with open('languages.txt','r') as fobj:
+    for line in fobj:
+        line = line.strip()
+        if re.search('^python',line):
+            print(line)
+            
+# $  - at the end of the string
+with open('languages.txt','r') as fobj:
+    for line in fobj:
+        line = line.strip()
+        if re.search('python$',line):
+            print(line)            
+            
+            
+# * -  zero or more occurences of the preceding character
+with open('languages.txt','r') as fobj:
+    for line in fobj:
+        line = line.strip()
+        if re.search('pyt*hon',line):
+            print(line) 
+            
+            
+            
+# + -  one or more occurences of the preceding character
+with open('languages.txt','r') as fobj:
+    for line in fobj:
+        line = line.strip()
+        if re.search('pyt+hon',line):
+            print(line) 
+            
+
+# ?  - either zero or one occurence
+with open('languages.txt','r') as fobj:
+    for line in fobj:
+        line = line.strip()
+        if re.search('pyt?hon',line):
+            print(line) 
+            
+#    . -- any single char or digit or symbol
+with open('languages.txt','r') as fobj:
+    for line in fobj:
+        line = line.strip()
+        if re.search('.ython',line):
+            print(line)             
+
+
+
+#   []  - character class  
+#   [qwer] - one among this character
+with open('languages.txt','r') as fobj:
+    for line in fobj:
+        line = line.strip()
+        if re.search('[qmjr]ython',line):  # qython or mython or jython or rython
+            print(line) 
+
+
+# (python|unix) - either python or unix
+with open('languages.txt','r') as fobj:
+    for line in fobj:
+        line = line.strip()
+        if re.search('python|unix',line):  
+            print(line) 
+            
+            
+            
+# {min,max}  - min to max occurences of the preceding char
+with open('languages.txt','r') as fobj:
+    for line in fobj:
+        line = line.strip()
+        if re.search('pyt{3,7}hon',line):  
+            print(line) 
+
+
+
+
+
+
+##################################
+## examples
+##################################
+
+
+
+
+import re
+
+line  = "The rain in Spain"
+x = re.findall("ai", line)
+print(x)
+
+
+
+
+
+line = "The rain in Spain"
+x = re.findall("Portugal", line)
+print(x)
+
+
+import re
+string = 'hello 12 hi 89. Howdy 34'
+pattern = '\d+'
+result = re.findall(pattern, string)
+print(result)
+
+
+
+
+
+
+
+
+
+
+import re
+string = 'Twelve:12 Eighty nine:89.'
+pattern = '\d+'
+result = re.split(pattern, string)
+print(result)
+
+
+
+
+
+
+
+
+import re
+
+string = 'abc    12de 23 \n f45 6'
+pattern = '\s+' 
+replace = ' '
+new_string = re.sub(pattern, replace, string)
+print(new_string)
+
+
+
+
+
+
+
+
+import re
+string = '39801 356, 2102 1111'
+
+pattern = '(\d{3}) (\d{2})'
+match = re.search(pattern, string)
+if match:
+  print(match.group())
+else:
+  print("pattern not found")
+
+
+
+
+
+
+
+
+import re
+string = '39801 356, 2102 1111'
+
+pattern = '(\d{3}) (\d{2})'
+x = re.findall(pattern, string)
+print(x)
+
+
+
+import re
+
+regex = '[\w]+@[\w]+'
+
+email = "giridhar276@gmail.com"
+
+if re.search(regex,email):
+    print("valid email")
+else:
+    print("Invalid email")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import re
+regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+email = "giridhar276@gmail.com"
+
+if re.search(regex,email):
+    print("valid email")
+else:
+    print("Invalid email")
+
+
+
+
+
+###################
+# map() and filter()
+###################
+
+# function body
+def display(a,b):
+    c = a + b
+    return c
+
+total = display(10,20)
+print(total)
+
+# functional programing
+# lambda function
+# lambda is the replacement of single liner function
+# no system calls 
+# lambda expression will be replaced in the function body
+# Advantage: better performance
+display = lambda a,b: a+b
+total = display(10,20)
+print(total)
+
+concat = lambda x,y: x +" " + y
+output = concat("hi","python")
+print(output)
+
+
+
+
+
+square = lambda x : x*x if(x > 0) else None
+print(square(4))
+
+
+test = lambda x : True if (x > 10 and x < 20) else False
+print(test(12))
+print(test(3))
+print(test(24))
+
+
+
+alist = [10,20,30,40]
+
+#[15,25,35,45]
+blist = []
+for val in alist:
+    blist.append(val)
+print(blist)
+
+
+def myfunction(x):
+    return x + 5
+alist = [10,20,30,40]
+output = list(map(myfunction,alist))
+print(output)
+
+
+myfunction = lambda x : x+5
+alist = [10,20,30,40]
+output = list(map(myfunction,alist))
+print(output)
+
+
+alist = [10,20,30,40]
+output = list(map(lambda x : x+5,alist))
+print(output)
+
+
+output = ['1','2','3']
+output = list(map(lambda x : int(x),output))
+print(output)
+
+
+# filter the list
+data = ["google","facebook","oracle","perl","ruby","unix"]
+output = list(filter(lambda x : len(x) == 4,data))
+print(output)
+
+
+
+
+# write a program to display all the strings with length4
+["perl","ruby","unix"]
+
+
+
+
+
+
+
+
+data = ["google","facebook","oracle"]
+["www.google.com","www.facebook.com","www.oracle.com"]
+
+
+
+
+
+
+
+
+class Bike:
+    def __init__(self, price, max_speed):
+        self.price = price
+        self.max_speed = max_speed
+        self.miles = 0
+    def displayInfo(self):
+        print("Bike's Price: ${}".format(self.price))
+        print("Bike Maximum Speed: {} mph".format(self.max_speed))
+        print("Total Miles Ridden: {} miles".format(self.miles))
+        return self
+    def ride(self):
+        print("Riding...")
+        self.miles = self.miles +  10
+        return self
+    def reverse(self):
+        if self.miles < 6:
+            print("Cannot reverse bike that hasn't been ridden forward")
+        else:
+            self.miles = self.miles -  5
+            print("Reversing")
+        return self
+if __name__ == "__main__":
+    bike1 = Bike(5000, 250)
+    bike2 = Bike(500, 35)
+    bike3 = Bike(50, 2)
+    print ("Bike 1")
+    bike1.ride().ride().ride().reverse().displayInfo()
+    print ("Bike 2")
+    bike2.ride().ride().reverse().reverse().displayInfo()
+    print ("Bike 3")
+    bike3.reverse().reverse().reverse().displayInfo()
+
+
+
+
+
+############################
+
+
+
+class Call:
+    def __init__(self, id, name, phone_number, time_of_call, reason_for_call):
+        self.id = id
+        self.name = name
+        self.phone_number = phone_number
+        self.time_of_call = time_of_call
+        self.reason_for_call = reason_for_call
+
+    def display(self):
+        print("ID:", self.id)
+        print("Name:", self.name)
+        print("Phone Number:", self.phone_number)
+        print("Time of call (in HHMM format):", self.time_of_call)
+        print("Reason for call:", self.reason_for_call)
+
+class CallCenter:
+    def __init__(self):
+        self.calls = []
+        self.queue_size = 0
+    def add(self, call):
+        call_list = []
+        call_list.append(call.id)
+        call_list.append(call.name)
+        call_list.append(call.phone_number)
+        call_list.append(call.time_of_call)
+        call_list.append(call.reason_for_call)
+        self.calls.append(call_list)
+        self.queue_size += 1
+        return self
+    def remove(self):
+        self.calls.pop(0)
+        self.queue_size -= 1
+        return self
+    def info(self):
+        print('Length of queue:', self.queue_size)
+        for value in self.calls:
+            print("Name:", value[1])
+            print("Phone Number:", value[2])
+call1 = Call(1, 'Ash', 123, 1234, 'thanks')
+call1.display()
+call_center = CallCenter()
+call_center.add(call1)
+call_center.info()
+# print call_center.calls
+
+
+
+
+###################################################################
+
+class Patient:
+    def __init__(self, id, name, allergies, bed_number=None):
+        self.id = id
+        self.name = name
+        self.allergies = allergies
+        self.bed_number = bed_number
+class Hospital:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.patients = []
+        self.capacity = capacity
+    def add(self, patient):
+        if len(self.patients) >= self.capacity:
+            print('Sorry! The Hospital is full!')
+        else:
+            patient_dictionary = {
+            'ID': patient.id,
+            'Name': patient.name,
+            'Allergies': patient.allergies,
+            'Bed Number': patient.bed_number
+            }
+            self.patients.append(patient_dictionary)
+            print ('{} has been admitted.'.format(patient.name))
+    def discharge(self, name):
+        for value in self.patients:
+            if value['Name'] == name:
+                value['Bed Number'] = None
+                self.patients.remove(value)
+patient1 = Patient(1, 'Ash', 'Wool', 1)
+patient2 = Patient(1, 'Sterling', 'Chocolate', 3)
+patient3 = Patient(1, 'Alish', 'Puppies', 7)
+patient4 = Patient(1, 'Andre', 'Kitties', 9)
+hospital = Hospital('kings Hospital', 3)
+hospital.add(patient1)
+hospital.add(patient2)
+hospital.add(patient3)
+hospital.add(patient4)
+hospital.discharge('Alish')
+hospital.discharge('Sterling')
+hospital.add(patient4)
+
+
+
+
+
+
+
+class A:
+    
+    def __init__(self):
+        self.__priv = "I am private"
+        self._prot = "I am protected"
+        self.pub = "I am public"
+        print(self.__priv)        
+
+obj = A()
+
+print(obj.pub)
+print(obj.__priv)
+print(obj._prot)
+
+    
+# public    : all the members defined with public can be accessible
+#             anywhere in the program
+# private   : member defined with private(__) can be accessible only
+#             inside the class
+# protected : any member defined with protected(_) can be accessed
+#             in other classes as well
+
+
+
+
+
+
+
+
+
+class SampleClass:
+    globalNumVariable = 3691
+    globalStringVariable = "Some string.."
+    b = 987 # b is a global variable
+    _b = 654 # can be called as protected
+    __b = 321 # private
+    # constrcutor.
+    def __init__(self):
+        self.a = 123    # OK to access directly
+        self._a = 456   # should be considered protected
+        self.__a = 789  # considered private, name mangled , more secure Data
+    def getSecureData(self):
+        print("I am a secure data",self.__a)
+    def _getProtectedData(self):
+        print ("inside single underscore")
+        print(self._a)
+    # Below method (which is inside the class) is considered as Private method(used double underscore
+    # before the method name.
+    def __getMoreSecureDataMethod(self):
+        print(self.__a)
+
+if __name__ == '__main__':
+    # Lets first try to create an object of SampleClass.
+    objOfSampleClass = SampleClass() # object will get created here.
+    m = SampleClass() # creating another object for the same class (reason : n number of obj can be created for a class)
+    # just for your reference.
+    print(objOfSampleClass.b)
+    print(objOfSampleClass._b)
+    # If you want to bring private value/variable outside the class, normally its not possible.
+    # Below is going to throw an error (uncomment and execute it)
+    #print(objOfSampleClass.__b)
+    # But if you do still, want to bring the value outside the class. then follow the below line of code.
+    # using objOfSampleClass, lets call two global variables
+    print(objOfSampleClass.globalNumVariable) # 3691
+    print(objOfSampleClass.globalStringVariable) #
+    # At the time of object creation, we are creating three variables Isn't it? (check __init__ method())
+    # lets call those variable values one by one.
+    print(objOfSampleClass.a)  # output is 123
+    print(objOfSampleClass._a)  # output is 456
+    #print(objOfSampleClass.__a)  # uncomment and run this line, it will throw an error.
+    # below line contains getSecureData() - which is a public method, inside this method we are printing __a value,
+    print("calling a method: ", objOfSampleClass.getSecureData())
+    print("calling a protected method: ", objOfSampleClass._getProtectedData())
+    # # Below method has __ [two underscores], which is considered as private method here. So it cannot be called outside the class.
+    # Uncomment the below line and test.
+    # print("calling a method: ", m.__getMoreSecureData())
+
+    # here we are tyring to get the method out, but it's not possible.
+    #print("calling a method: ", m._SampleClass__getMoreSecureData())
+
+
+
+
+
+
+
+
+
+###########
+
+
+
+
+x = "Hi"
+
+def read_x():
+    print(x)    
+read_x()
+
+
+
+
+def read_y():
+    print(y)
+y = "hi"
+read_y()
+
+
+# In python,objects defined within the block are local
+# 
+def read_y():
+    y = "Hello"
+    print(y)
+read_y()
+print(y)
+
+
+
+# If a name is bound inside a function, 
+#it is by default accessible only within the function
+def test():
+    a = 5
+    print(a)    
+test()
+print(a)
+
+
+
+#### Normally an assignment inside a scope will shadow 
+#### any outer variables of same name
+x = "Hi"
+
+def change_local_x():
+    x = "Bye"
+    print(x)  
+
+change_local_x()
+print(x)       
+
+
+# declaring a name global means that, for the rest of the scope, 
+#any assignments to the name
+# will happen at the module's top level
+x = "Hi"
+def change_global_x():
+    global x
+    x = "Bye"
+    print(x)
+
+change_global_x()
+print(x)
+
+
+
+
+
+
+
+
+#########################
+class Person:
+    # initializing the variables
+    name = ""
+    age = 0
+    # defining constructor
+    def __init__(self, person_name, person_age):
+        self.name = person_name
+        self.age = person_age
+        # defining class methods
+    def show_name(self):
+        print(self.name)
+    def show_age(self):
+        print(self.age)
+
+# definition of subclass starts here
+class Student(Person):
+    studentId = ""
+
+    def __init__(self, student_name, student_age, student_id):
+        #Person.
+        super().__init__(student_name, student_age)
+        self.studentId = student_id
+
+    def get_id(self):
+        return self.studentId  # returns the value of student id
+
+# end of subclass definition
+
+
+# Create an object of the superclass
+person1 = Person("Richard", 23)
+# call member methods of the objects
+person1.show_age()
+# Create an object of the subclass
+student1 = Student("Max", 22, "102")
+print(student1.get_id())
+student1.show_name()    
+
+
+
+############################
+
+
+
+class SchoolMember:
+    '''Represents any school member.'''
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        print('(Initialized SchoolMember: {})'.format(self.name))
+
+    def tell(self):
+        '''Tell my details.'''
+        print('Name:"{}" Age:"{}"'.format(self.name, self.age), end=" ")
+
+
+class Teacher(SchoolMember):
+    '''Represents a teacher.'''
+    def __init__(self, name, age, salary):
+        SchoolMember.__init__(self, name, age)
+        self.salary = salary
+        print('(Initialized Teacher: {})'.format(self.name))
+
+    def tell(self):
+        SchoolMember.tell(self)
+        print('Salary: "{:d}"'.format(self.salary))
+
+class Student(SchoolMember):
+    '''Represents a student.'''
+    def __init__(self, name, age, marks):
+        SchoolMember.__init__(self, name, age)
+        self.marks = marks
+        print('(Initialized Student: {})'.format(self.name))
+
+    def tell(self):
+        SchoolMember.tell(self)
+        print('Marks: "{:d}"'.format(self.marks))
+
+t = Teacher('Mrs. Shrividya', 40, 30000)
+s = Student('Swaroop', 25, 75)
+
+# prints a blank line
+print()
+
+members = [t, s]
+for member in members:
+    # Works for both Teachers and Students
+    member.tell()
+
+
+
+
+
+
+
+import requests
+import json
+url = "https://api.github.com/"
+
+
+response = requests.get(url)
+
+if response.status_code == 200:
+    #print(response.text)
+    data = json.loads(response.text)
+    for key,value in data.items():
+        print(key.ljust(25), value)
+        
+        
+        
+        
+        
+        
+        
+        
+#######################################
+
+
+
+
+import requests
+import json
+url = "https://api.github.com/"
+
+endpoint = "gists"
+
+finalurl = url + endpoint
+
+username = "giridhar276"
+
+file = "class7.py"
+with open(file,"r") as fobj:
+    mydata = fobj.read()
+
+payload = {
+    "description":"rest api",
+    "public":"true",
+    "files":
+        {
+            "class7.py":{"content" : mydata}
+        }
+    }
+
+response = requests.post(finalurl,data = json.dumps(payload), auth=(username,"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"))
+print(response.status_code)
+if response.status_code == 201:
+    print(response.text)
+    
+    
+    
+#######################################
+
+
+        
+
